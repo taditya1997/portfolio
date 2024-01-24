@@ -2,32 +2,174 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  @font-face {
+    font-family: "Satoshi";
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: local(""), url("/fonts/Satoshi-Black.woff2") format("woff2"),
+      url("/fonts/Satoshi-Black.woff") format("woff");
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  @font-face {
+    font-family: "Satoshi";
+    font-style: normal;
+    font-weight: 700;
+    font-display: block;
+    src: local(""), url("/fonts/Satoshi-Bold.woff2") format("woff2"),
+      url("/fonts/Satoshi-Bold.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Satoshi";
+    font-style: normal;
+    font-weight: 500;
+    font-display: block;
+    src: local(""), url("/fonts/Satoshi-Medium.woff2") format("woff2"),
+      url("/fonts/Satoshi-Medium.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Satoshi";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: local(""), url("/fonts/Satoshi-Regular.ttf") format("woff2"),
+      url("/fonts/Satoshi-Regular.ttf") format("ttf");
+  }
+
+  @font-face {
+    font-family: "Merriweather";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: local(""), url("/fonts/Merriweather-Regular.woff2") format("woff2");
+  }
+
+  body {
+    -webkit-tap-highlight-color: transparent;
+    /* background-image: url('/gradients/noise.jpg'); */
+    @apply font-satoshi subpixel-antialiased overflow-auto scroll-smooth bg-black ;
+  }
+
+  .container {
+    @apply mx-auto w-full px-mobile md:px-8
+    max-w-xs md:max-w-md lg:max-w-lg;
+  }
+
+  h1,
+  .h1 {
+    @apply font-satoshi leading-tight tracking-tight font-black
+		text-44 md:text-56 lg:text-64;
+  }
+
+  h2,
+  .h2 {
+    @apply font-satoshi leading-tight tracking-tight font-bold
+		text-28 md:text-36 lg:text-44;
+  }
+
+  h3,
+  .h3 {
+    @apply font-satoshi leading-tight tracking-tight font-bold
+		text-22 md:text-28 lg:text-32;
+  }
+
+  h4,
+  .h4 {
+    @apply font-satoshi leading-snug tracking-normal font-medium
+		text-20 md:text-22 lg:text-24;
+  }
+
+  h5,
+  .h5 {
+    @apply font-satoshi leading-snug tracking-normal font-medium
+		text-18 lg:text-20;
+  }
+
+  h6,
+  .h6 {
+    @apply font-satoshi leading-snug tracking-loose font-medium
+		text-16 lg:text-18;
+  }
+
+  p,
+  .p {
+    @apply font-satoshi leading-loose tracking-loose font-normal
+		text-14 md:text-16 lg:text-18;
+  }
+
+  input {
+    @apply rounded-full outline-none hover:outline-none focus:outline-none caret-primary-blue;
+  }
+
+  button {
+    @apply rounded-full outline-none hover:outline-none focus:outline-none;
+  }
+
+  .noise {
+    background-image: url("/gradients/noise.jpg");
+    @apply bg-blend-overlay;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    background: rgba(0, 27, 51, 0.1);
+    height: 0.2rem;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    margin-top: -7px; /* Centers thumb on the track */
+  }
+
+  .tooltip {
+    @apply invisible absolute;
+  }
+
+  .has-tooltip:hover .tooltip {
+    @apply visible z-50;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-input {
+    @apply appearance-none h5 rounded-full w-full lg:h-16 lg:px-7 bg-neutral-white/60 focus:bg-neutral-white/80
+    border-2 border-neutral-black/8 hover:border-primary-hover focus:border-primary-hover caret-primary-blue;
+  }
+
+  .spacing-top {
+    @apply pt-12 lg:pt-20;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .two-line-wrap {
+    @apply overflow-hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .smooth-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .overflow-fade {
+    mask-image: linear-gradient(90deg, #202022 85%, transparent);
+    -webkit-mask-image: linear-gradient(90deg,#202022 85%,transparent);
   }
 }
