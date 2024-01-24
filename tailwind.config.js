@@ -14,8 +14,12 @@ module.exports = {
       lg: "1280px",
     },
     fontFamily: {
-      satoshi: ["Satoshi", "sans-serif"],
-      merriweather: ["Merriweather", "serif"],
+      sans: [
+        " ui-sans-serif, system-ui, sans-serif, Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji",
+      ],
     },
     fontSize: {
       12: "0.75rem",
@@ -54,11 +58,11 @@ module.exports = {
       "primary-hover": "rgba(0, 106, 251)",
       green: "#04A971",
       zinc: "rgb(250,250,250)",
+      textZinc: "rgb(161 161 170)",
       grey: "rgba(0, 27, 51,.3)",
       "green-ltp": "rgba(4, 169, 113, 1)",
       "red-ltp": "rgba(222, 32, 32, 1)",
-      "teal":  "rgb(20 184 166)"
-      
+      teal: "rgb(20 184 166)",
     },
     opacity: {
       4: ".04",

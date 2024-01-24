@@ -3,53 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: "Satoshi";
-    font-style: normal;
-    font-weight: 900;
-    font-display: block;
-    src: local(""), url("/fonts/Satoshi-Black.woff2") format("woff2"),
-      url("/fonts/Satoshi-Black.woff") format("woff");
-  }
-
-  @font-face {
-    font-family: "Satoshi";
-    font-style: normal;
-    font-weight: 700;
-    font-display: block;
-    src: local(""), url("/fonts/Satoshi-Bold.woff2") format("woff2"),
-      url("/fonts/Satoshi-Bold.woff") format("woff");
-  }
-
-  @font-face {
-    font-family: "Satoshi";
-    font-style: normal;
-    font-weight: 500;
-    font-display: block;
-    src: local(""), url("/fonts/Satoshi-Medium.woff2") format("woff2"),
-      url("/fonts/Satoshi-Medium.woff") format("woff");
-  }
-  @font-face {
-    font-family: "Satoshi";
-    font-style: normal;
-    font-weight: 400;
-    font-display: block;
-    src: local(""), url("/fonts/Satoshi-Regular.ttf") format("woff2"),
-      url("/fonts/Satoshi-Regular.ttf") format("ttf");
-  }
-
-  @font-face {
-    font-family: "Merriweather";
-    font-style: normal;
-    font-weight: 400;
-    font-display: block;
-    src: local(""), url("/fonts/Merriweather-Regular.woff2") format("woff2");
-  }
-
   body {
     -webkit-tap-highlight-color: transparent;
     /* background-image: url('/gradients/noise.jpg'); */
-    @apply font-satoshi subpixel-antialiased overflow-auto scroll-smooth bg-black ;
+    @apply font-sans scroll-smooth bg-black;
   }
 
   .container {
@@ -59,43 +16,43 @@
 
   h1,
   .h1 {
-    @apply font-satoshi leading-tight tracking-tight font-black
+    @apply font-sans leading-tight tracking-tight font-black
 		text-44 md:text-56 lg:text-64;
   }
 
   h2,
   .h2 {
-    @apply font-satoshi leading-tight tracking-tight font-bold
+    @apply font-sans leading-tight tracking-tight font-bold
 		text-28 md:text-36 lg:text-44;
   }
 
   h3,
   .h3 {
-    @apply font-satoshi leading-tight tracking-tight font-bold
+    @apply font-sans leading-tight tracking-tight font-bold
 		text-22 md:text-28 lg:text-32;
   }
 
   h4,
   .h4 {
-    @apply font-satoshi leading-snug tracking-normal font-medium
+    @apply font-sans leading-snug tracking-normal font-medium
 		text-20 md:text-22 lg:text-24;
   }
 
   h5,
   .h5 {
-    @apply font-satoshi leading-snug tracking-normal font-medium
+    @apply font-sans leading-snug tracking-normal font-medium
 		text-18 lg:text-20;
   }
 
   h6,
   .h6 {
-    @apply font-satoshi leading-snug tracking-loose font-medium
+    @apply font-sans leading-snug tracking-loose font-medium
 		text-16 lg:text-18;
   }
 
   p,
   .p {
-    @apply font-satoshi leading-loose tracking-loose font-normal
+    @apply font-sans leading-loose tracking-loose font-normal
 		text-14 md:text-16 lg:text-18;
   }
 
@@ -105,11 +62,6 @@
 
   button {
     @apply rounded-full outline-none hover:outline-none focus:outline-none;
-  }
-
-  .noise {
-    background-image: url("/gradients/noise.jpg");
-    @apply bg-blend-overlay;
   }
 
   input[type="range"] {
@@ -170,6 +122,6 @@
 
   .overflow-fade {
     mask-image: linear-gradient(90deg, #202022 85%, transparent);
-    -webkit-mask-image: linear-gradient(90deg,#202022 85%,transparent);
+    -webkit-mask-image: linear-gradient(90deg, #202022 85%, transparent);
   }
 }

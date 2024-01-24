@@ -11,7 +11,7 @@ export const Navbar = () => {
             <AvatarFallback>AT</AvatarFallback>
           </Avatar>
         </div>
-        <div className="mt-3">
+        <div className="mt-3 hidden md:block">
           <nav className="pointer-events-auto">
             <ul class="flex rounded-full bg-neutral-white/[0.09] px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5  ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
               <li>
