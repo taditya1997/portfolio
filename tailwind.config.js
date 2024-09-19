@@ -12,6 +12,7 @@ module.exports = {
     screens: {
       md: "768px",
       lg: "1280px",
+      'xs': '480px',
     },
     fontFamily: {
       sans: [
@@ -63,6 +64,7 @@ module.exports = {
       "green-ltp": "rgba(4, 169, 113, 1)",
       "red-ltp": "rgba(222, 32, 32, 1)",
       teal: "rgb(20 184 166)",
+      cardBorder:"rgba(63, 63, 70, .4)"
     },
     opacity: {
       4: ".04",

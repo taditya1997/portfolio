@@ -1,36 +1,47 @@
-import { Navbar } from "@/components/Navbar";
+import React from "react";
+import HighlightedBlogPost from "@/components/HighlightedBlogPost";
 import { IconsDetails } from "@/lib/constant";
+
 export default function Home() {
   return (
-    <div className="flex  container min-h-screen text-neutral-white  border-l-green border-r-green bg-primaryBackground flex-col">
-      <div className="">
-        <Navbar />
-        <main className="mt-12  "></main>
-        {renderHeroSection()}
+    <>
+      {renderHeroSection()}
+      <div className="mt-8">
+        <HighlightedBlogPost />
       </div>
-    </div>
+    </>
   );
 }
 
 function renderHeroSection() {
   return (
-    <div className=" px-8 flex flex-col max-w-[45rem] gap-4">
-      {" "}
-      <h1 className=" leading-tight">Software Engineer</h1>
+    <div className="flex flex-col max-w-[45rem] gap-4 mt-12">
+      <h1 className="leading-tight">Software Engineer</h1>
       <p className="mt-6 text-textZinc">
-        Hello, I'm Aditya, your tech ally from Bangalore. By day, I'm a software
-        maestro shaping digital landscapes. With a touch of humor, I turn
-        complex challenges into triumphs. Join me on this coding adventure,
-        where professionalism meets a splash of wit, making every project a step
-        closer to success!
+        Hey, I'm Aditya, a software developer from Bangalore. I love solving
+        tough problems with a mix of skill and humor. When I'm not coding,
+        you'll find me lifting weights or relaxing with friends over a drink.
+        Mental health matters to me—because strong code starts with a strong
+        mind.
       </p>
       <div className="mt-6 flex gap-6">
         {IconsDetails.map((icon) => (
-          <a href={icon.url} target="_blank">
-            {icon.iconsSvg}
+          <a
+            key={icon.iconName}
+            href={icon.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+          >
+            {React.cloneElement(icon.iconsSvg, {
+              className:
+                "h-6 w-6 fill-white transition hover:fill-zinc dark:fill-textZinc group-hover:fill-textZinc cursor-pointer",
+            })}
+            <span className="sr-only">{icon.iconName}</span>
           </a>
         ))}
       </div>
     </div>
   );
 }
+
