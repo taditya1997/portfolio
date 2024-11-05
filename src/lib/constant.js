@@ -28,7 +28,7 @@ export const IconsDetails = [
   },
   {
     iconName: "Github",
-    url: "",
+    url: "https://github.com/taditya1997?tab=repositories",
     iconsSvg: (
       <svg
         viewBox="0 0 24 24"
@@ -45,7 +45,7 @@ export const IconsDetails = [
   },
   {
     iconName: "LinkedIn",
-    url: "",
+    url: "https://www.linkedin.com/in/aditya-thakur-919767185/",
     iconsSvg: (
       <svg
         viewBox="0 0 24 24"

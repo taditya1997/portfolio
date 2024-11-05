@@ -1,0 +1,135 @@
+.article-content {
+  color: #f1f1f1;
+  line-height: 1.7;
+}
+
+.article-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  color: #ffffff;
+}
+
+.article-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+  color: #ffffff;
+}
+
+.article-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.75rem;
+  color: #ffffff;
+}
+
+.article-content p {
+  margin-bottom: 1.25rem;
+  color: #a1a1aa;
+}
+
+.article-content ul,
+.article-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  color: #a1a1aa;
+}
+
+.article-content ul {
+  list-style-type: disc;
+}
+
+.article-content ol {
+  list-style-type: decimal;
+}
+
+.article-content li {
+  margin-bottom: 0.5rem;
+}
+
+.article-content .code-block {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #1a1a1a;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  border: 1px solid #2d2d2d;
+}
+
+.article-content code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+}
+
+.article-content p code {
+  background: #1a1a1a;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  color: #10b981;
+}
+
+.article-content pre code {
+  padding: 0;
+  background: transparent;
+}
+
+.article-content a {
+  color: #10b981;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.article-content a:hover {
+  color: #34d399;
+}
+
+.article-content blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid #10b981;
+  color: #a1a1aa;
+  font-style: italic;
+}
+
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.article-content hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid #2d2d2d;
+}
+
+/* Prism.js theme customization */
+.article-content .token.comment,
+.article-content .token.prolog,
+.article-content .token.doctype,
+.article-content .token.cdata {
+  color: #6b7280;
+}
+
+.article-content .token.punctuation {
+  color: #e5e7eb;
+}
+
+.article-content .token.property,
+.article-content .token.tag,
+.article-content .token.boolean,
+.article-content .token.number,
+.article-content .token.constant,
+.article-content .token.symbol {
+  color: #10b981;
+}
+
+.article-content .token.selector,
+.article-content .token.attr-name,
+.article-content .token.string,
+.article-content .token.char,
+.article-content .token.builtin {
+  color: #34d399;
+}
