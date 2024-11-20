@@ -69,13 +69,15 @@ export function ExperienceComponent() {
 function WorkItem({ company, duration, logo }) {
   return (
     <div className="flex flex-col xs:flex-row items-start xs:items-center justify-between w-full p-2 rounded">
-      <div className="flex items-center space-x-2 mb-1 xs:mb-0">
+      <div className="flex items-center space-x-3 mb-1 xs:mb-0">
         {logo && (
-          <img 
-            src={logo} 
-            alt={`${company} logo`}
-            className="w-8 h-8 object-contain"
-          />
+          <div className="w-12 h-12 rounded-full overflow-hidden bg-transparent flex items-center justify-center">
+            <img 
+              src={logo} 
+              alt={`${company} logo`}
+              className="w-full h-full object-contain"
+            />
+          </div>
         )}
         <div>
           <p className="text-14 font-semibold">{company}</p>
