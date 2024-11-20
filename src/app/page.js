@@ -18,11 +18,13 @@ function renderHeroSection() {
     <div className="flex flex-col max-w-[45rem] gap-4 mt-12">
       <h1 className="leading-tight">Software Engineer</h1>
       <p className="mt-6 text-textZinc">
-        Hey, I'm Aditya, a software developer from Bangalore. I love solving
-        tough problems with a mix of skill and humor. When I'm not coding,
-        you'll find me lifting weights or relaxing with friends over a drink.
-        Mental health matters to me—because strong code starts with a strong
-        mind.
+        Hey there! I'm Aditya, a software engineer based in Bangalore who turns
+        coffee into code. I thrive on tackling complex challenges with a blend
+        of technical expertise and a dash of humor. Beyond the keyboard, you'll
+        catch me either pushing weights at the gym or unwinding with friends
+        over good conversations. I'm a firm believer that great code flows from
+        a balanced mind, which is why I advocate for developer well-being as
+        much as clean architecture.
       </p>
       <div className="mt-6 flex gap-6">
         {IconsDetails.map((icon) => (
@@ -44,4 +46,3 @@ function renderHeroSection() {
     </div>
   );
 }
-

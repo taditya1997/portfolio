@@ -6,6 +6,24 @@ import { Button } from "@/components/ui/button";
 import { ArrowDownIcon } from "@radix-ui/react-icons";
 import { Briefcase } from 'lucide-react';
 
+const workExperience = [
+  {
+    company: "Scrut Automation",
+    duration: "March 2024 — August 2024",
+    logo: "/scrut_automation_logo.jpeg"
+  },
+  {
+    company: "Frigga Cloud Labs",
+    duration: "May 2023 - March 2024",
+    logo: "/frigga_logo.png"
+  },
+  {
+    company: "Atmecs Technologies Pvt Ltd",
+    duration: "June 2021 — April 2023",
+    logo: "/atmecs.jpeg"
+  }
+];
+
 export function ExperienceComponent() {
   const handleDownload = (e) => {
     e.preventDefault();
@@ -25,34 +43,14 @@ export function ExperienceComponent() {
       </CardHeader>
     
       <CardContent className="space-y-4 mt-4 w-full px-0">
-        <WorkItem
-          company="Scrut Automation"
-          role="Software Engineer"
-          period="March 2024 — August 2024"
-          avatar="SA"
-          logoSrc="/scrut_automation_logo.jpeg"
-        />
-        <WorkItem
-          company="Unacademy"
-          role="Software Engineer"
-          period="Nov 2023 — December 2023"
-          avatar="UA"
-          logoSrc="/unacademy.jpeg"
-        />
-        <WorkItem
-          company="Finkraft.ai"
-          role="Software Engineer"
-          period="May 2023 — August 2023"
-          logoSrc="/finkraft.jpeg"
-          avatar="FA"
-        />
-        <WorkItem
-          company="Atmecs Technologies Pvt Ltd"
-          role="Software Engineer"
-          period="June 2021 — April 2023"
-          logoSrc="/atmecs.jpeg"
-          avatar="AT"
-        />
+        {workExperience.map((work, index) => (
+          <WorkItem
+            key={index}
+            company={work.company}
+            duration={work.duration}
+            logo={work.logo}
+          />
+        ))}
       </CardContent>
   
       <CardFooter className="mt-4 px-0">
@@ -68,23 +66,22 @@ export function ExperienceComponent() {
   );
 }
 
-function WorkItem({ company, role, period, avatar, logoSrc }) {
+function WorkItem({ company, duration, logo }) {
   return (
     <div className="flex flex-col xs:flex-row items-start xs:items-center justify-between w-full p-2 rounded">
       <div className="flex items-center space-x-2 mb-1 xs:mb-0">
-        <Avatar className="w-10 h-10 flex-shrink-0">
-          {logoSrc ? (
-            <AvatarImage src={logoSrc} alt={company} />
-          ) : (
-            <AvatarFallback>{avatar}</AvatarFallback>
-          )}
-        </Avatar>
+        {logo && (
+          <img 
+            src={logo} 
+            alt={`${company} logo`}
+            className="w-8 h-8 object-contain"
+          />
+        )}
         <div>
           <p className="text-14 font-semibold">{company}</p>
-          <p className="text-12 text-textZinc">{role}</p>
+          <p className="text-12 text-textZinc">{duration}</p>
         </div>
       </div>
-      <p className="text-12 text-textZinc mt-1 xs:mt-0 hidden xs:block">{period}</p>
     </div>
   );
 }
